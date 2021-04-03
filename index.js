@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-
+require("dotenv/config");
+port = process.env.PORT || 8000;
 //EXPRESS SPECIFIC
 app.use("/static", express.static("static"));
 //PUG SPECIFIC
@@ -27,4 +28,4 @@ app.get("/score", (req, res) => {
   res.send({ minutes, seconds });
 });
 
-app.listen(80, () => {});
+app.listen(port, () => {});
