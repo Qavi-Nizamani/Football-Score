@@ -34,7 +34,7 @@ body::before {
 }
 .scoreBoard {
   color: black;
-  font-size: 25px;
+  font-size: 1.5rem;
   font-weight: bold;
   margin: 0 10px;
 }
@@ -52,7 +52,7 @@ body::before {
   padding: 7px 16px;
   background: rgb(0 0 0 / 55%);
   color: white;
-  font-size: 26px;
+  font-size: 1.5rem;
 }
 .anim {
   position: absolute;
@@ -76,5 +76,37 @@ body::before {
   100% {
     left: 50px;
     bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .scoreBoard {
+    font-size: 1rem;
+  }
+  #timer {
+    font: 1rem;
+  }
+  .anim {
+    position: absolute;
+    height: 200px;
+    animation: mymove 7s infinite;
+  }
+  @keyframes mymove {
+    0% {
+      left: 0px;
+      bottom: 30px;
+    }
+    50% {
+      left: 140px;
+      bottom: 50px;
+      height: 170px;
+    }
+    100% {
+      left: 0px;
+      bottom: 30px;
+    }
+  }
+  body {
+    background-color: lightgreen;
   }
 }
