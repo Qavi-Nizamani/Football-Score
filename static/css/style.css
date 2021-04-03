@@ -59,7 +59,7 @@ body::before {
 .anim {
   position: absolute;
   height: 450px;
-  animation: mymove 7s infinite;
+  animation: mymove 9s infinite;
 }
 .anim img {
   height: inherit;
@@ -110,5 +110,33 @@ body::before {
   }
   body {
     background-color: lightgreen;
+  }
+}
+@media only screen and (max-height: 600px) {
+  .scoreBoard {
+    font-size: 1.5rem;
+  }
+  #timer {
+    font-size: 1.5rem;
+  }
+  .anim {
+    position: absolute;
+    height: 200px;
+    animation: mymove 9s infinite;
+  }
+  @keyframes mymove {
+    0% {
+      left: 40px;
+      bottom: 10px;
+    }
+    50% {
+      left: 150px;
+      bottom: 60px;
+      height: 150px;
+    }
+    100% {
+      left: 40px;
+      bottom: 10px;
+    }
   }
 }
