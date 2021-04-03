@@ -89,7 +89,7 @@ body::before {
   .anim {
     position: absolute;
     height: 200px;
-    animation: mymove 7s infinite;
+    animation: mymove 9s infinite;
   }
   @keyframes mymove {
     0% {
@@ -98,7 +98,7 @@ body::before {
     }
     50% {
       left: 70px;
-      bottom: 50px;
+      bottom: 80px;
       height: 150px;
     }
     100% {
