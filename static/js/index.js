@@ -1,6 +1,9 @@
 console.log("index");
+updateScore();
+let timer = document.getElementById("timer");
+let score = document.getElementById("score");
 setInterval(() => {
-  fetch("/score", {
+  fetch("/time", {
     method: "GET",
     headers: {
       "Content-type": "application/json; charset = UTF-8",
@@ -12,7 +15,23 @@ setInterval(() => {
       updateTime(time.minutes, time.seconds);
     });
 }, 1000);
+setInterval(() => {
+  updateScore();
+}, 10000);
 
+function updateScore() {
+  fetch("/score", {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json; charset = UTF-8",
+    },
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      const team = JSON.parse(data);
+      score.innerHTML = team.team1 + " - " + team.team2;
+    });
+}
 function updateTime(minutes, seconds) {
   if (seconds == 60) {
     minutes++;

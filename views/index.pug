@@ -10,10 +10,17 @@ body
         .container
             .teamLogo
                 img(src='../static/img/england.svg' alt='' srcset='')
-            .score.scoreBoard England 0 - 0 Italy
+            #score.score.scoreBoard
             .teamLogo
                 img(src='../static/img/italy.svg' alt='' srcset='')
         #timer.time.scoreBoard
     .anim
         img(src='../static/img/player-anim.png' alt='' srcset='')
+    if(admin)
+        form(action="/iamadmin", method="post")
+            label(for="team1") Team 1 Name And Score 
+            input(type="text",name="team1", id="team1",value="England 0")  
+            label(for="team1") Team 2 Name And Score 
+            input(type="text",name="team2", id="team2",value="1 Italy")  
+            button(type="submit") Change      
 script(src='../static/js/index.js')
