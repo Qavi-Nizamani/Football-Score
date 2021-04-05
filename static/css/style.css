@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   max-height: 100vh;
 }
 body::before {
@@ -125,6 +129,24 @@ form {
 }
 form input {
   margin: 0 5px;
+  padding: 2px 5px;
+}
+#teamPlayers {
+  height: 500px;
+}
+#teamPlayers textarea {
+  height: 400px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#teamPlayers button {
+  margin-left: 10px;
+  padding: 5px 20px;
+}
+.teamPlayers {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 /* @media only screen and (max-height: 600px) {
   .scoreBoard {
@@ -154,3 +176,45 @@ form input {
     }
   }
 } */
+.red {
+  background-color: rgb(248, 229, 229);
+  font-size: 1.2em;
+}
+/* PLAYERS CSS */
+.teams {
+  justify-self: center;
+  align-self: center;
+  background-color: rgba(255, 235, 205, 0.664);
+  padding: 65px 40px;
+  font-size: 2em;
+  font-weight: bold;
+  column-gap: 100px;
+  margin-top: 8px;
+  width: 100%;
+}
+.teams li {
+  list-style: none;
+}
+
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 5px;
+  font-size: 1.3em;
+  font-weight: bold;
+  justify-content: flex-end;
+  background-color: rgba(255, 255, 255, 0.788);
+}
+.footer p {
+  position: relative;
+
+  animation: textSlide 20s infinite linear;
+}
+@keyframes textSlide {
+  0% {
+    right: -200px;
+  }
+  100% {
+    right: 1600px;
+  }
+}

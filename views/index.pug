@@ -9,18 +9,24 @@ body
     #banner
         .container
             .teamLogo
-                img(src='../static/img/england.svg' alt='' srcset='')
+                img(src='../static/img/' +team1Logo + '.svg', alt='', srcset='',id="team1Logo")
             #score.score.scoreBoard
             .teamLogo
-                img(src='../static/img/italy.svg' alt='' srcset='')
+                img(src='../static/img/' +team2Logo + '.svg',alt='' srcset='',id="team2Logo")
         #timer.time.scoreBoard
+    .container.teams
+        .team1
+            ul 
+                each player in team1Players 
+                    li= player
+        .team2
+            ul 
+                each player2  in team2Players 
+                    li=player2
+    //- if(!isMatch)
+    //-     .container.red There is Currently no match...
     .anim
         img(src='../static/img/player-anim.png' alt='' srcset='')
-    if(admin)
-        form(action="/iamadmin", method="post")
-            label(for="team1") Team 1 Name And Score 
-            input(type="text",name="team1", id="team1",value="England 0")  
-            label(for="team1") Team 2 Name And Score 
-            input(type="text",name="team2", id="team2",value="1 Italy")  
-            button(type="submit") Change      
+    .container.footer 
+        p= news
 script(src='../static/js/index.js')

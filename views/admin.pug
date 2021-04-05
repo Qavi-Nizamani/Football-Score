@@ -1,0 +1,40 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Football Score Live
+  link(rel='stylesheet' href='../static/css/style.css')
+body
+  if(admin)
+        form
+            label(for="team1") Team 1
+            input(type="text",name="team1", id="team1",value="England")  
+            input(type="number",name="team1Score", id="team1Score",value="0", style="width: 50px")  
+            label(for="team1") Team 2 
+            input(type="text",name="team2", id="team2",value="Italy")  
+            input(type="number",name="team2Score", id="team2Score",value="1", style="width: 50px")  
+            button(type="submit",id="btnTeams") Change
+
+        form
+            label(for="minutes") Minutes
+            input(type="number",name="minutes", id="minutes",value="0", style="width: 100px")  
+            label(for="seconds") Seconds
+            input(type="number",name="seconds", id="seconds",value="0", style="width: 100px")  
+            label(for="matchStarted") Match Started
+            input(type="number",name="matchStarted", id="matchStarted",value="0", style="width: 100px")  
+            label(for="matchRunning") Match Running
+            input(type="number",name="matchRunning", id="matchRunning",value="0", style="width: 100px")  
+            label(for="secondHalf") Second Half
+            input(type="number",name="secondHalf", id="secondHalf",value="0", style="width: 100px")  
+            button(type="submit",id="btnTime") Change
+        form#teamPlayers(action="/iamadmin", method="get")
+            div.container.teamPlayers
+                label(for="team1Players") team1
+                textarea( cols="30", rows="10",name="team1", id="team1Players")  
+            div.container.teamPlayers    
+                label(for="team2Players") team2
+                textarea( cols="30", rows="10",name="team2", id="team2Players") 
+            div.container.teamPlayers  
+                button(type="submit",id="btnPlayers") Change
+script(src='../static/js/admin.js')
