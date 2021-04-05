@@ -5,6 +5,7 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Football Score Live
   link(rel='stylesheet' href='../static/css/style.css')
+  link(rel='stylesheet' href='../static/css/admin.css')
 body
   if(admin)
         form
@@ -23,17 +24,17 @@ body
             input(type="number",name="seconds", id="seconds",value="0", style="width: 100px")  
             label(for="matchStarted") Match Started
             input(type="number",name="matchStarted", id="matchStarted",value="0", style="width: 100px")  
-            label(for="matchRunning") Match Running
-            input(type="number",name="matchRunning", id="matchRunning",value="0", style="width: 100px")  
+            //- label(for="matchRunning") Match Running
+            //- input(type="number",name="matchRunning", id="matchRunning",value="0", style="width: 100px")  
             label(for="secondHalf") Second Half
             input(type="number",name="secondHalf", id="secondHalf",value="0", style="width: 100px")  
             button(type="submit",id="btnTime") Change
         form#teamPlayers(action="/iamadmin", method="get")
             div.container.teamPlayers
-                label(for="team1Players") team1
+                label(for="team1Players") Team 1 Players
                 textarea( cols="30", rows="10",name="team1", id="team1Players")  
             div.container.teamPlayers    
-                label(for="team2Players") team2
+                label(for="team2Players") Team 2 Players
                 textarea( cols="30", rows="10",name="team2", id="team2Players") 
             div.container.teamPlayers  
                 button(type="submit",id="btnPlayers") Change

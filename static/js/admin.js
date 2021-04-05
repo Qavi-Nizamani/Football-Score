@@ -13,7 +13,7 @@ let team2Score = document.getElementById("team2Score");
 let min = document.getElementById("minutes");
 let sec = document.getElementById("seconds");
 let match = document.getElementById("matchStarted");
-let matchRun = document.getElementById("matchRunning");
+// let matchRun = document.getElementById("matchRunning");
 let secHalf = document.getElementById("secondHalf");
 //TEAMS PLAYERS
 let team1P = document.getElementById("team1Players");
@@ -34,9 +34,9 @@ function updateTime(e) {
   let minutes = min.value;
   let seconds = sec.value;
   let matchStarted = match.value;
-  let matchIsRunning = matchRun.value;
+  // let matchIsRunning = matchRun.value;
   let secondHalf = secHalf.value;
-  let time = { minutes, seconds, matchStarted, matchIsRunning, secondHalf };
+  let time = { minutes, seconds, matchStarted, secondHalf };
   updateData("/iamadmin/settime", time);
 }
 function setPlayers(e) {
