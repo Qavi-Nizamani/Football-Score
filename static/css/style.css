@@ -116,38 +116,7 @@ body::before {
     background-color: lightgreen;
   }
 }
-/* CSS FOR ADMIN PAGE ONLY */
-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  font-size: 1.2em;
-  color: white;
-  font-weight: bold;
-  background: #00000082;
-}
-form input {
-  margin: 0 5px;
-  padding: 2px 5px;
-}
-#teamPlayers {
-  height: 500px;
-}
-#teamPlayers textarea {
-  height: 400px;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-#teamPlayers button {
-  margin-left: 10px;
-  padding: 5px 20px;
-}
-.teamPlayers {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 /* @media only screen and (max-height: 600px) {
   .scoreBoard {
     font-size: 1.5rem;

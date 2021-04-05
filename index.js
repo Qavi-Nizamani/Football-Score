@@ -30,43 +30,30 @@ let team1Logo = "barcelona";
 let team2Logo = "real-madrid";
 
 setInterval(() => {
+  if (secondHalf == 1) {
+    matchStarted = 0;
+  }
   if (matchStarted == 1) {
-    if (seconds == 60 && matchIsRunning == 1) {
+    seconds++;
+    if (seconds == 60) {
       minutes++;
       seconds = 0;
     }
-    if (minutes == 45 && secondHalf == 0) {
-      matchStarted = 0;
-      matchIsRunning = 0;
-    } else if (secondHalf == 1) {
-      matchIsRunning = 1;
-      seconds++;
-    } else seconds++;
   }
 }, 1000);
 
 //END POINTS
 app.get("/", (req, res) => {
   try {
-    if (matchStarted == 1) {
-      res.render("index", {
-        isMatch: true,
-        team1Players,
-        team2Players,
-        news: "England vs Italy",
-        team1Logo,
-        team2Logo,
-      });
-    } else {
-      res.render("index", {
-        isMatch: false,
-        team1Players,
-        team2Players,
-        news: "England vs Italy",
-        team1Logo,
-        team2Logo,
-      });
-    }
+    res.render("index", {
+      isMatch: true,
+      team1Players,
+      team2Players,
+      news: "England vs Italy",
+      team1Logo,
+      team2Logo,
+    });
+    r;
   } catch (error) {
     res.send("some Error Occured");
   }
@@ -85,7 +72,7 @@ app.get("/iamadmin", (req, res) => {
   res.status(200).render("admin", { admin: true });
 });
 
-app.post("/iamadmin/setscore", (req, res) => {
+app.post("/iamadmin/setscore", async (req, res) => {
   try {
     team1 = req.body.t1;
     team2 = req.body.t2;
@@ -97,7 +84,7 @@ app.post("/iamadmin/setscore", (req, res) => {
     console.log("set score error");
   }
 });
-app.post("/iamadmin/settime", (req, res) => {
+app.post("/iamadmin/settime", async (req, res) => {
   try {
     matchStarted = req.body.matchStarted;
     if (matchStarted == 1) {
@@ -111,7 +98,7 @@ app.post("/iamadmin/settime", (req, res) => {
   }
 });
 
-app.post("/iamadmin/setplayers", (req, res) => {
+app.post("/iamadmin/setplayers", async (req, res) => {
   try {
     players1 = JSON.parse(req.body.t1);
     players2 = JSON.parse(req.body.t2);
