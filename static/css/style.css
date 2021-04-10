@@ -62,7 +62,7 @@ body::before {
 }
 .anim {
   position: absolute;
-  height: 450px;
+  height: 150px;
   animation: mymove 9s infinite;
 }
 .anim img {
@@ -77,7 +77,7 @@ body::before {
   50% {
     left: 250px;
     bottom: 60px;
-    height: 300px;
+    height: 200px;
   }
   100% {
     left: 50px;
@@ -94,7 +94,7 @@ body::before {
   }
   .anim {
     position: absolute;
-    height: 200px;
+    height: 100px;
     animation: mymove 9s infinite;
   }
   @keyframes mymove {
@@ -105,7 +105,7 @@ body::before {
     50% {
       left: 70px;
       bottom: 80px;
-      height: 150px;
+      height: 110px;
     }
     100% {
       left: 0px;
@@ -153,13 +153,14 @@ body::before {
 .teams {
   justify-self: center;
   align-self: center;
-  background-color: rgba(255, 235, 205, 0.664);
+  background-color: rgb(255 255 255 / 86%);
   padding: 65px 40px;
   font-size: 2em;
   font-weight: bold;
   column-gap: 100px;
   margin-top: 8px;
   width: 100%;
+  /* display: none; */
 }
 .teams li {
   list-style: none;
