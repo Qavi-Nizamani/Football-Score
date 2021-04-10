@@ -38,4 +38,7 @@ body
                 textarea( cols="30", rows="10",name="team2Players", id="team2Players") 
             div.container.teamPlayers  
                 button(type="submit",id="btnPlayers") Change
+        form(id="frmUploader" enctype="multipart/form-data" action="/upload" method="post")
+            <input type="file" name="imgUploader" />
+            <input type="submit" name="submit" id="btnImage" value="Upload" />
 script(src='../static/js/admin.js')

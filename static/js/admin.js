@@ -4,6 +4,8 @@ let btnTime = document.getElementById("btnTime");
 btnTime.addEventListener("click", updateTime);
 let btnTeams = document.getElementById("btnTeams");
 btnTeams.addEventListener("click", updateTeams);
+let btnImage = document.getElementById("btnImage");
+// btnImage.addEventListener("click", uploadImage);
 
 //TEAMS NAMES AND SCORE
 let team1 = document.getElementById("team1");
@@ -18,6 +20,9 @@ let secHalf = document.getElementById("secondHalf");
 //TEAMS PLAYERS
 let team1P = document.getElementById("team1Players");
 let team2P = document.getElementById("team2Players");
+async function uploadImage(e) {
+  e.preventDefault();
+}
 async function updateTeams(e) {
   e.preventDefault();
   let t1 = team1.value;

@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const upload = require("express-fileupload");
 const Matches = require("../models/matches");
-
+router.use(upload());
 let match1 = new Matches("FC Metz", "LOSC Lille");
 
 //GET END POINTS
@@ -25,6 +26,21 @@ router.get("/iamadmin", (req, res) => {
   res.status(200).render("admin", { admin: true });
 });
 //POST END POINTS
+router.post("/upload", async (req, res) => {
+  if (req.files) {
+    // console.log(req.files);
+    let file = req.files.imgUploader;
+    let fileName = file.name;
+    // console.log(fileName);
+    await file.mv("./static/img/" + fileName, (err) => {
+      if (err) {
+        res.send("some error" + err);
+      } else {
+        res.send("file saved");
+      }
+    });
+  }
+});
 router.post("/iamadmin/settime", async (req, res) => {
   try {
     await match1.setTime(req.body);
